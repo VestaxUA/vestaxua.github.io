@@ -1,0 +1,129 @@
+body {
+    background-color: blanchedalmond;
+    margin : 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+div.cake {
+    box-sizing: border-box;
+    position:relative;
+    height: 850px;
+    width: 23vw;
+    margin: 1vw;
+    float: left;
+    overflow: hidden;
+}
+
+div.cake > img {
+    cursor: pointer;
+}
+
+div.recipe {
+    display : none;
+    background-color: rgb(215, 193, 167);
+    border: 2px outset rgb(102, 97, 90) ;
+    font-size: 80%;
+    border-radius: 5px;
+}
+
+h4 {
+    font-size: 150%;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+div.wrapper {
+    width: 200vw;
+    height: 860px;
+    overflow: hidden;
+}
+
+input {
+    margin : 10px 20px;
+    text-align: center;
+}
+
+div.cake > a:hover ~ div.recipe, div.recipe:hover {
+    display: block;
+    position: absolute;
+    top:218px;
+    z-index: 9999;
+}
+
+#cake1:checked ~ .wrapper {
+    margin-left: 0;
+    transition: 200ms;
+}
+
+#cake2:checked ~ .wrapper {
+    margin-left: -25vw;
+    transition: 200ms;
+}
+
+#cake3:checked ~ .wrapper {
+    margin-left: -50vw;
+    transition: 200ms;
+}
+
+#cake4:checked ~ .wrapper {
+    margin-left: -75vw;
+    transition: 200ms;
+}
+
+#cake5:checked ~ .wrapper {
+    margin-left: -100vw;
+    transition: 200ms;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+  .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 0 rgb(0, 0, 0);
+    opacity: .5;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+.close:focus,
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+    overflow: auto;
+}
+
+div.modal-body > img {
+    margin: 100px;
+    margin-left: 300px;
+}
